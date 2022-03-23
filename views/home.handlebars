@@ -1,0 +1,25 @@
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" href="/home.css" />
+</head>
+<main>
+  <h1>Home</h1>
+  <form action="/register" method="post">
+    <input type="text" name="nombre" placeholder="nombre" />
+    <input type="text" name="correo" placeholder="correo" />
+    <input type="text" name="clave" placeholder="clave" />
+    <button>Crear</button>
+  </form>
+
+  {{#if users}}
+    <h3>Usuarios</h3>
+
+    {{#each users}}
+      <div class="user">
+        <h3>{{this.nombre}}</h3>
+        <h4>{{this.correo}}</h4>
+      </div>
+    {{/each}}
+
+  {{/if}}
+</main>
